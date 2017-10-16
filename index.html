@@ -4,17 +4,20 @@
 
 	<head>
 	    <meta charset="utf-8" />
-	    <title>Gamedev Canvas Workshop</title>
+	    <title>Breakout</title>
 	    <link rel="stylesheet" href="Breakout.css">
 	</head>
 
 
 	<body>
+		<div id="start-screen">
+			<h1 id="welcome">Welcome to </h1>
+			<h1 id = "breakout">Breakout</h1>
+			<br>
+			<button id="startButton" class = "button" onclick="play()">Start!</button>
+		</div>
 		<script src="Breakout.js"></script>	
 		<canvas id="myCanvas" width="480" height="320"></canvas>
-		<div>
-		<button id="startButton" onclick="play()">Start!</button>
-		</div>
 	</body>
 
 </html>

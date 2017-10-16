@@ -1,7 +1,9 @@
 function play()
 			{
-			document.getElementById("startButton").innerHTML = "";
-			
+
+			// Hide the start screen and show canvas
+			document.getElementById("start-screen").style.display = "none";
+			document.getElementById("myCanvas").style.display = "block";
 
 
 			//global variables
