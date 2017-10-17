@@ -5,7 +5,6 @@ function play()
 			document.getElementById("start-screen").style.display = "none";
 			document.getElementById("myCanvas").style.display = "block";
 
-
 			//global variables
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
@@ -20,11 +19,11 @@ function play()
 
 
 			//paddle details
-			var paddleHeight = 10;
-			var paddleWidth = 75;
+			var paddleHeight = 12;
+			var paddleWidth = 90;
 			var paddleX = (canvas.width - paddleWidth)/2;
 			var paddleY = (canvas.height - paddleHeight);
-			
+
 
 
 			//keypress booleans
@@ -34,9 +33,9 @@ function play()
 
 
 			//bricks variables
-			var brickRowCount = 3;
-			var brickColumnCount = 10;
-			var brickWidth = 35;
+			var brickRowCount = 6;
+			var brickColumnCount = 9;
+			var brickWidth = 75;
 			var brickHeight = 20;
 			var brickPadding = 10;
 			var brickOffsetTop = 30;
@@ -56,7 +55,7 @@ function play()
 			}
 
 
-			
+
 			//Event Listeners
 			document.addEventListener("keydown", keyDownHandler,false);
 			document.addEventListener("keyup", keyUpHandler, false);
@@ -108,6 +107,18 @@ function play()
 			{
 				ctx.beginPath();
 				ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
+				ctx.fillStyle = "#0095DD";
+				ctx.fill();
+				ctx.closePath();
+
+				ctx.beginPath();
+				ctx.arc(paddleX, paddleY+paddleHeight/2, paddleHeight/2, Math.PI/2, 3*Math.PI/2);
+				ctx.fillStyle = "#0095DD";
+				ctx.fill();
+				ctx.closePath();
+
+				ctx.beginPath();
+				ctx.arc(paddleX+paddleWidth, paddleY+paddleHeight/2, paddleHeight/2, 3*Math.PI/2, Math.PI/2);
 				ctx.fillStyle = "#0095DD";
 				ctx.fill();
 				ctx.closePath();
@@ -166,7 +177,7 @@ function play()
 
 
 						//for vertical collision
-						
+
 						if(b.status==1)
 						{
 							if(x>b.x-ballRadius&&x<b.x+brickWidth+ballRadius)
@@ -308,7 +319,7 @@ function play()
 					dx = -dx;
 				}
 				x += dx;
-				y += dy;				
+				y += dy;
 				if(rightPressed&&paddleX<canvas.width-paddleWidth)
 					paddleX += 7;
 				else if(leftPressed&&paddleX>0)
@@ -318,102 +329,6 @@ function play()
 
 
 
-			setInterval(draw,10);
+			setInterval(draw,7);
 			//draw();
-			}function play()
-2
-                        {
-3
-                        document.getElementById("startButton").innerHTML = "";
-4
-                        
-5
-​
-6
-​
-7
-                        //global variables
-8
-                        var canvas = document.getElementById("myCanvas");
-9
-                        var ctx = canvas.getContext("2d");
-10
-                        var x = canvas.width/2;
-11
-                        var y = canvas.height - 30;
-12
-                        var dx = 2;
-13
-                        var dy= -2;
-14
-                        var ballRadius = 10;
-15
-                        var score = 0;
-16
-                        var lives = 3;
-17
-​
-18
-​
-19
-​
-20
-                        //paddle details
-21
-                        var paddleHeight = 10;
-22
-                        var paddleWidth = 75;
-23
-                        var paddleX = (canvas.width - paddleWidth)/2;
-24
-                        var paddleY = (canvas.height - paddleHeight);
-25
-                        
-26
-​
-27
-​
-28
-                        //keypress booleans
-29
-                        var rightPressed = false;
-30
-                        var leftPressed = false;
-31
-​
-32
-​
-33
-​
-34
-                        //bricks variables
-35
-                        var brickRowCount = 3;
-36
-                        var brickColumnCount = 10;
-37
-                        var brickWidth = 35;
-38
-                        var brickHeight = 20;
-39
-                        var brickPadding = 10;
-40
-                        var brickOffsetTop = 30;
-41
-                        var brickOffsetLeft = 30;
-42
-​
-43
-​
-44
-​
-45
-                        //bricks initialization
-46
-                        var bricks = [];                        //2d array to store bricks
-47
-                        for(c=0; c<brickColumnCount; c++)
-48
-                        {
-49
-                            bricks[c] = [];
+			}

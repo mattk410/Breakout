@@ -4,7 +4,7 @@
 
 	<head>
 	    <meta charset="utf-8" />
-	    <title>Breakout</title>
+	    <title>Breakout Game</title>
 	    <link rel="stylesheet" href="Breakout.css">
 	</head>
 
@@ -15,9 +15,18 @@
 			<h1 id = "breakout">Breakout</h1>
 			<br>
 			<button id="startButton" class = "button" onclick="play()">Start!</button>
-		</div>
-		<script src="Breakout.js"></script>	
-		<canvas id="myCanvas" width="480" height="320"></canvas>
+    </div>
+		<script src="Breakout.js"></script>
+		<canvas id="myCanvas" width="810" height="540"></canvas>
+    		<script>
+		{
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			ctx.font = "72px Helvetica";
+			ctx.fillStyle = "#0095DD";
+			ctx.fillText("Breakout", 270, 270);
+		}
+		</script>
 	</body>
 
 </html>
